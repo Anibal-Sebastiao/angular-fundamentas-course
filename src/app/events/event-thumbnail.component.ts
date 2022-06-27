@@ -5,7 +5,7 @@ import { ToastrService } from "../ccommon/toastr.service";
 @Component({
   selector: 'app-event-thumbnail',
   template: `
-    <div class="well hoverwell thumbnail" (click)="handleThumbnailClick(event.name)">
+    <div [routerLink]="['/events', event.id]" class="well hoverwell thumbnail" (click)="handleThumbnailClick(event.name)">
     <h2>{{ event.name }}</h2>
     <div class="">
       <div>{{event?.date}}</div>
