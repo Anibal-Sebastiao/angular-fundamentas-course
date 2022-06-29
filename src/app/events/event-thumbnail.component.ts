@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { ToastrService } from "../ccommon/toastr.service";
+import { IEvent } from "./shared";
 
 
 @Component({

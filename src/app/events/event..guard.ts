@@ -12,9 +12,12 @@ export class EventGuard implements CanActivate {
 
     const eventExists = this.eventService.getEvent(activatedRouter.params['id'])
 
-    if(!eventExists) this.router.navigate(['/404'])
+    if(!eventExists) {
+      this.router.navigate(['/404'])
+      return false
+    }
 
-    return eventExists;
+    return true;
   }
 
 }
