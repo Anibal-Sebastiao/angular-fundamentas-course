@@ -9,13 +9,17 @@ import { EventsComponent } from './events.component';
 import { EventDetailComponent } from './events/event-detail/event-detail';
 import { EventThumbnailComponent } from './events/event-thumbnail.component';
 import { EventsListComponent } from './events/events-list.component';
-import { EventService } from './events/shared';
 import { NavBarComponent } from './nav/navbar.component';
-import { CretateEventComponent } from './events/create-event/create-event.component';
 import { EventGuard } from './events/event..guard';
 import { EventListResolver } from './events/event-list.resolver';
 import { UserRouting } from './user/user.routing';
 import { AuthService } from './user/auth.service';
+
+import {
+  CreateSessionComponent,
+  CretateEventComponent,
+  EventService
+} from './events/shared'
 
 @NgModule({
   declarations: [
@@ -24,7 +28,8 @@ import { AuthService } from './user/auth.service';
     EventThumbnailComponent,
     NavBarComponent,
     EventDetailComponent,
-    CretateEventComponent
+    CretateEventComponent,
+    CreateSessionComponent
   ],
   imports: [
     BrowserModule,
