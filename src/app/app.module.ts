@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRouting } from './app.routing';
-import { ToastrService,CollapsibleWellComponent } from './common';
+import { CollapsibleWellComponent, TOASTER_TOKEN, Toaster } from './common';
 import { EventsComponent } from './events.component';
 import { EventDetailComponent } from './events/event-detail/event-detail';
 import { EventThumbnailComponent } from './events/event-thumbnail.component';
@@ -13,6 +13,9 @@ import { EventGuard } from './events/event..guard';
 import { EventListResolver } from './events/event-list.resolver';
 import { UserRouting } from './user/user.routing';
 import { AuthService } from './user/auth.service';
+
+
+declare let toaster: Toaster;
 
 import {
   CreateSessionComponent,
@@ -43,7 +46,12 @@ import {
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [EventService, ToastrService, EventGuard, EventListResolver, AuthService],
+  providers: [
+    EventService,
+    EventGuard,
+    EventListResolver, AuthService,
+    {provide: TOASTER_TOKEN, useValue: toaster}
+  ],
   bootstrap: [EventsComponent]
 })
 export class AppModule { }

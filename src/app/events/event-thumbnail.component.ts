@@ -1,12 +1,10 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { ToastrService } from "../common/toastr.service";
-import { IEvent } from "./shared";
+import { Component, Input } from "@angular/core";
 
 
 @Component({
   selector: 'app-event-thumbnail',
   template: `
-    <div [routerLink]="['/events', event.id]" class="well hoverwell thumbnail" (click)="handleThumbnailClick(event.name)">
+    <div [routerLink]="['/events', event.id]" class="well hoverwell thumbnail">
     <h2>{{ event.name | uppercase }}</h2>
     <div class="">
       <div>{{event?.date | date: 'shortDate'}}</div>
@@ -36,13 +34,10 @@ import { IEvent } from "./shared";
 export class EventThumbnailComponent {
   @Input() event: any;
 
-  constructor(private toastrService: ToastrService) {}
+  constructor() {}
 
   getStartTimeClass(event: string) {
     return (event === '08:00 am') ? ['thumbnail', 'bold'] : [];
   }
 
-  handleThumbnailClick(event: string){
-    this.toastrService.success(event)
-  }
 }
