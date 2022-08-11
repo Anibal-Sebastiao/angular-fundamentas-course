@@ -18,7 +18,8 @@ import {
   CreateSessionComponent,
   CretateEventComponent,
   EventService,
-  SessionListComponent
+  SessionListComponent,
+  DurationPipe
 } from './events/shared';
 
 @NgModule({
@@ -31,7 +32,8 @@ import {
     CretateEventComponent,
     CreateSessionComponent,
     SessionListComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
