@@ -42,7 +42,7 @@
       <em *ngIf="abstract?.dirty && abstract?.invalid && abstract?.errors?.['restrictedWords']"> {{abstract?.errors?.['restrictedWords']}} </em>
       <textarea id="abstract" rows=3 class="form-control" placeholder="abstract..." formControlName="abstract"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="newSessionForm.invalid">Save</button>
-    <button type="button" class="btn btn-default">Cancel</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!newSessionForm.invalid">Save</button>
+    <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
   </form>
 </div>

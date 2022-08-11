@@ -3,8 +3,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRouting } from './app.routing';
-import { ToastrService } from './ccommon/toastr.service';
-
+import { ToastrService,CollapsibleWellComponent } from './common';
 import { EventsComponent } from './events.component';
 import { EventDetailComponent } from './events/event-detail/event-detail';
 import { EventThumbnailComponent } from './events/event-thumbnail.component';
@@ -18,8 +17,9 @@ import { AuthService } from './user/auth.service';
 import {
   CreateSessionComponent,
   CretateEventComponent,
-  EventService
-} from './events/shared'
+  EventService,
+  SessionListComponent
+} from './events/shared';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,9 @@ import {
     NavBarComponent,
     EventDetailComponent,
     CretateEventComponent,
-    CreateSessionComponent
+    CreateSessionComponent,
+    SessionListComponent,
+    CollapsibleWellComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,6 @@
+<div class="well pointer" (click)="toggleContent()">
+  <h4>
+    <ng-content selec="[well-title]"></ng-content>
+  </h4>
+  <ng-content select="[well-body]" *ngIf="isVisible"></ng-content>
+</div>
