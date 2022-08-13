@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "Event List",
-        "User"
+        "User",
+        "Nav"
     ]
 }
