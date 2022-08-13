@@ -60,12 +60,8 @@ import {
     EventService,
     EventGuard,
     EventListResolver, AuthService,
-<<<<<<< HEAD
-    {provide: TOASTER_TOKEN, useValue: toastr}
-=======
     {provide: TOASTER_TOKEN, useValue: toastr},
     {provide: JQ_TOKEN, useValue: jQuery}
->>>>>>> f25808c278b340791a6729e97442a8d7ff1a655d
   ],
   bootstrap: [EventsComponent]
 })
