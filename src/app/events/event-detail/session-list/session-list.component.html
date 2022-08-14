@@ -1,5 +1,8 @@
 <div class="row" *ngFor="let session of visibleSessions">
-  <div class="col-md-12">
+  <div class="col-md-1">
+    <app-upvoted (vote)="toggleVote(session)" [count]="session?.voters?.length" [voted]="userHasVoted(session)" modal-trigger="upvoted-modal"></app-upvoted>
+  </div>
+  <div class="col-md-11">
     <app-collapsible-well >
       <div well-title>
         {{session.name}}

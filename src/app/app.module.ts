@@ -31,6 +31,7 @@ import {
   SessionListComponent,
   DurationPipe
 } from './events/shared';
+import { UpvotedComponent } from './events/event-detail/upvoted/upvoted.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import {
     CollapsibleWellComponent,
     DurationPipe,
     SimpleModalComponent,
-    ModalTriggerDirective
+    ModalTriggerDirective,
+    UpvotedComponent
   ],
   imports: [
     BrowserModule,

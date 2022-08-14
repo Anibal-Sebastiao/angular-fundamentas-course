@@ -15,9 +15,6 @@ export class SimpleModalComponent implements OnInit {
   constructor(@Inject(JQ_TOKEN) private $: any) { }
 
   ngOnInit(): void {
-
-    console.log(this.closeOnBodyClick);
-
   }
 
   closeModal() {

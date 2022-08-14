@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Inject, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, HostListener, Inject, Input } from '@angular/core';
 import { JQ_TOKEN } from './jQuery.service';
 
 @Directive({
@@ -14,6 +14,8 @@ export class ModalTriggerDirective {
   @HostListener('click')
   triggerModal() {
     this.$(`#${this.trigger}`).modal({})
+    console.log(`#${this.trigger}`);
+
   }
 
 
