@@ -15,7 +15,7 @@ import { AuthService } from "../user/auth.service";
   ]
 })
 export class NavBarComponent {
-  searchTerm: string = 'pipe'
+  searchTerm: string = ''
   foundSessions: ISession[] = []
   constructor (public auth: AuthService,
                private eventService: EventService) {}
