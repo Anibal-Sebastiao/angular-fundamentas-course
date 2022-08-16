@@ -15,6 +15,10 @@ import { ProfileComponent } from './profile.component';
    CommonModule,
    FormsModule,
    ReactiveFormsModule
+  ],
+
+  exports: [
+    LoginComponent
   ]
 })
 export class UserModule {}

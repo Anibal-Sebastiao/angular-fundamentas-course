@@ -1,6 +1,6 @@
 <div class="row" *ngFor="let session of visibleSessions">
   <div class="col-md-1">
-    <app-upvoted (vote)="toggleVote(session)" [count]="session?.voters?.length" [voted]="userHasVoted(session)" modal-trigger="upvoted-modal"></app-upvoted>
+    <app-upvoted (vote)="toggleVote(session)" [count]="session?.voters?.length" [voted]="userHasVoted(session)" [modal-trigger]="(!auth.currentUser) ? 'upvoted-modal' : ''"></app-upvoted>
   </div>
   <div class="col-md-11">
     <app-collapsible-well >
@@ -28,3 +28,8 @@
     </app-collapsible-well>
   </div>
 </div>
+
+
+<app-simple-modal idModal="upvoted-modal" [closeOnBodyClick]="false">
+  <app-login></app-login>
+</app-simple-modal>

@@ -32,6 +32,7 @@ import {
   DurationPipe
 } from './events/shared';
 import { UpvotedComponent } from './events/event-detail/upvoted/upvoted.component';
+import { UserModule } from './user/user.module';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { UpvotedComponent } from './events/event-detail/upvoted/upvoted.componen
     RouterModule,
     UserRouting,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    UserModule
   ],
   providers: [
     EventService,

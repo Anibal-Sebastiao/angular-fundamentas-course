@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Inject, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { JQ_TOKEN } from '../jQuery.service';
 
 @Component({
@@ -7,8 +7,8 @@ import { JQ_TOKEN } from '../jQuery.service';
   styleUrls: ['./simple-modal.component.css']
 })
 export class SimpleModalComponent implements OnInit {
-
   @Input() title: string = '';
+  @Input() idModal: string = '';
   @ViewChild('modalContainer') modalContainer: ElementRef | undefined ;
   @Input() closeOnBodyClick: boolean = true;
 

@@ -15,7 +15,7 @@ export class SessionListComponent implements OnChanges {
   @Input() sortBy: string = '';
   visibleSessions: ISession[] = [];
 
-  constructor(private auth: AuthService,
+  constructor(public auth: AuthService,
               private voterService: VoterService) { }
 
   ngOnChanges(): void {
@@ -65,6 +65,10 @@ export class SessionListComponent implements OnChanges {
 
   userHasVoted(session: ISession) {
     return this.voterService.userHasVoted(session, this.auth.currentUser);
+  }
+
+  close() {
+    console.log('close');
   }
 
 }

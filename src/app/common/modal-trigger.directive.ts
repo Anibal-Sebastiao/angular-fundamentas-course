@@ -14,8 +14,6 @@ export class ModalTriggerDirective {
   @HostListener('click')
   triggerModal() {
     this.$(`#${this.trigger}`).modal({})
-    console.log(`#${this.trigger}`);
-
   }
 
 
