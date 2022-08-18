@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "Event List",
         "User",
-        "Nav"
+        "Nav",
+        "Deploy"
     ]
 }
