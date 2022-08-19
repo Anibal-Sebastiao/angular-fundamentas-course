@@ -17,10 +17,14 @@ export class SimpleModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  closeModal() {
+  closeOnBodyClickEvent() {
     if(this.closeOnBodyClick) {
-      this.$(this.modalContainer?.nativeElement).modal('hide');
+      this.closeModal()
     }
+  }
+
+  closeModal() {
+      this.$(this.modalContainer?.nativeElement).modal('hide');
   }
 
 }

@@ -30,6 +30,6 @@
 </div>
 
 
-<app-simple-modal idModal="upvoted-modal" [closeOnBodyClick]="false">
-  <app-login></app-login>
+<app-simple-modal idModal="upvoted-modal" #upvotedModal [closeOnBodyClick]="false">
+  <app-login [redirect]="false" (closeLoginModal)="closeModal()"></app-login>
 </app-simple-modal>

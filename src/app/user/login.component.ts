@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { AuthService } from "./auth.service";
 
 
@@ -9,6 +9,7 @@ import { AuthService } from "./auth.service";
 export class LoginComponent {
 
   @Output() closeLoginModal = new EventEmitter<string>();
+  @Input() redirect: boolean= true;
 
   userName: string = '';
   password: string = '';
@@ -17,7 +18,8 @@ export class LoginComponent {
 
   login(formValues: any) {
     const {userName, password} = formValues.value;
-    this.auth.loginUser(userName, password)
-    this.closeLoginModal.emit('closeLoginModal')
+    this.auth.loginUser(userName, password, this.redirect)
+    this.closeLoginModal.emit()
+
   }
 }

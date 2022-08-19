@@ -10,7 +10,7 @@ export class AuthService {
 
   constructor (private router: Router) {}
 
-  loginUser(userName: string, password: string) {
+  loginUser(userName: string, password: string, redirect: boolean) {
     this.currentUser = {
       id: 1,
       userName: 'hannibal',
@@ -18,7 +18,7 @@ export class AuthService {
       lastName: 'Ha'
     }
 
-    this.router.navigate(['/events'])
+    if (redirect)this.router.navigate(['/events'])
 
   }
 

@@ -1,4 +1,5 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { SimpleModalComponent } from './../../../common/simple-modal/simple-modal.component';
+import { Component, Input, OnChanges, ViewChild } from '@angular/core';
 import { AuthService } from 'src/app/user/auth.service';
 import { ISession } from '../../shared';
 import { VoterService } from '../voter.service';
@@ -9,11 +10,11 @@ import { VoterService } from '../voter.service';
   styleUrls: ['./session-list.component.css']
 })
 export class SessionListComponent implements OnChanges {
-
   @Input() sessions: ISession[] = [];
   @Input() filterBy: string = '';
   @Input() sortBy: string = '';
   visibleSessions: ISession[] = [];
+  @ViewChild('upvotedModal') upvotedModal: SimpleModalComponent | any ;
 
   constructor(public auth: AuthService,
               private voterService: VoterService) { }
@@ -27,7 +28,6 @@ export class SessionListComponent implements OnChanges {
         : this.visibleSessions.sort(this.sortByVotesDesc)
     }
   }
-
 
   filterSession(filterBy: string) {
       if (this.filterBy === 'all') {
@@ -67,8 +67,8 @@ export class SessionListComponent implements OnChanges {
     return this.voterService.userHasVoted(session, this.auth.currentUser);
   }
 
-  close() {
-    console.log('close');
+  closeModal() {
+    this.upvotedModal.closeModal()
   }
 
 }

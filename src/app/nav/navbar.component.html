@@ -42,7 +42,7 @@
   </div>
 </div>
 
-<app-simple-modal idModal="search-modal" title="Matching Sessions" [closeOnBodyClick]="false">
+<app-simple-modal idModal="search-modal" title="Matching Sessions" [closeOnBodyClick]="true">
   <div class="lis-group">
     <a [routerLink]="['/events', session.id]" class="lidt-group-item" *ngFor="let session of foundSessions">
       {{session.name}}
