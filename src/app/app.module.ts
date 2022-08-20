@@ -33,6 +33,7 @@ import {
 } from './events/shared';
 import { UpvotedComponent } from './events/event-detail/upvoted/upvoted.component';
 import { UserModule } from './user/user.module';
+import { LocationValidatorDirective } from './events/location-validator.directive';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { UserModule } from './user/user.module';
     DurationPipe,
     SimpleModalComponent,
     ModalTriggerDirective,
-    UpvotedComponent
+    UpvotedComponent,
+    LocationValidatorDirective
   ],
   imports: [
     BrowserModule,
